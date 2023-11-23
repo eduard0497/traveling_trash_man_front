@@ -7,8 +7,6 @@ import {
 } from "@react-google-maps/api";
 import styles from "../styles/MapView.module.css";
 
-// AIzaSyAoG3lbblgCvJmoYIstVm2pwE-E5iaVitE
-
 function MapView() {
   const zoomDistance = 16;
   const mapWidth = "800px";
@@ -24,7 +22,7 @@ function MapView() {
   };
   const libraries = ["places"];
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyAoG3lbblgCvJmoYIstVm2pwE-E5iaVitE",
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY,
     // libraries: libraries,
   });
 
