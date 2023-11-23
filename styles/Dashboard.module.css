@@ -1,0 +1,11 @@
+/* .dashboard_container {
+} */
+
+.nav_container {
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+}
