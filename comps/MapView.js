@@ -6,6 +6,7 @@ import {
   InfoWindowF,
 } from "@react-google-maps/api";
 import styles from "../styles/MapView.module.css";
+import { devices } from "../aaa_samples/devices";
 
 function MapView() {
   const zoomDistance = 16;
@@ -26,27 +27,6 @@ function MapView() {
     // libraries: libraries,
   });
 
-  const markerPositions = [
-    {
-      id: 1,
-      lat: 34.242245312686954,
-      lng: -118.53043313617162,
-      sensorInfo: `Sensor info for #${1}`,
-    },
-    {
-      id: 2,
-      lat: 34.24162486342446,
-      lng: -118.53312379123766,
-      sensorInfo: `Sensor info for #${2}`,
-    },
-    {
-      id: 3,
-      lat: 34.23864450968821,
-      lng: -118.52814541323107,
-      sensorInfo: `Sensor info for #${3}asdasd`,
-    },
-  ];
-
   if (!isLoaded) {
     return <p>Loading...</p>;
   }
@@ -62,7 +42,7 @@ function MapView() {
           mapContainerStyle={{ width: mapWidth, height: mapHeight }}
           onLoad={() => console.log("Map Component Loaded...")}
         >
-          {markerPositions.map((item) => {
+          {devices.map((item) => {
             return (
               <>
                 <MarkerF
@@ -81,7 +61,9 @@ function MapView() {
                   }}
                 >
                   <div>
-                    <p>{item.sensorInfo}</p>
+                    <p>ID: {item.id}</p>
+                    <p>Battery: {item.battery}%</p>
+                    <p>Level: {item.level}%</p>
                   </div>
                 </InfoWindowF>
               </>

@@ -21,4 +21,17 @@ input {
   padding: 5px;
   border-radius: 5px;
   font-size: 20px;
+  width: 100%;
+}
+select {
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+  width: 100%;
+}
+textarea {
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+  width: 100%;
 }
