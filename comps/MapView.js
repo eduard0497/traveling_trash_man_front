@@ -31,6 +31,26 @@ function MapView() {
     return <p>Loading...</p>;
   }
 
+  const pickStyle_battery = (batteryPercentage) => {
+    if (batteryPercentage > 50) {
+      return styles.batteryGOOD;
+    }
+    if (batteryPercentage >= 15 && batteryPercentage <= 50) {
+      return styles.batteryOK;
+    }
+    if (batteryPercentage < 15) {
+      return styles.batteryBAD;
+    }
+  };
+
+  const pickStyle_level = (levelPercentage) => {
+    if (levelPercentage > 80) {
+      return styles.red_text;
+    } else {
+      return null;
+    }
+  };
+
   return (
     <div className={styles.map_container}>
       <div>
@@ -42,16 +62,16 @@ function MapView() {
           mapContainerStyle={{ width: mapWidth, height: mapHeight }}
           onLoad={() => console.log("Map Component Loaded...")}
         >
-          {devices.map((item) => {
+          {devices.map((device) => {
             return (
               <>
                 <MarkerF
-                  key={item.id}
-                  position={item}
+                  key={device.id}
+                  position={device}
                   onLoad={() => console.log("Marker Loaded")}
                 />
                 <InfoWindowF
-                  position={item}
+                  position={device}
                   zIndex={1}
                   options={{
                     pixelOffset: {
@@ -61,15 +81,33 @@ function MapView() {
                   }}
                 >
                   <div>
-                    <p>ID: {item.id}</p>
-                    <p>Battery: {item.battery}%</p>
-                    <p>Level: {item.level}%</p>
+                    <p>ID: {device.id}</p>
+                    <p>Battery: {device.battery}%</p>
+                    <p className={pickStyle_level(device.level)}>
+                      Level: {device.level}%
+                    </p>
                   </div>
                 </InfoWindowF>
               </>
             );
           })}
         </GoogleMap>
+      </div>
+      <div className={styles.devices_container}>
+        {devices.map((device) => {
+          return (
+            <div
+              key={device.id}
+              className={`${
+                styles.devices_container_device
+              } ${pickStyle_battery(device.battery)}`}
+            >
+              <h3>ID: {device.id}</h3>
+              <h3>Battery: {device.battery}%</h3>
+              <h3>Level: {device.level}%</h3>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -3,12 +3,12 @@ import styles from "../styles/Login.module.css";
 import { useRouter } from "next/router";
 
 const defaultCredsForAdmins = {
-  username: "1234",
-  password: "1234",
+  username: "123",
+  password: "123",
 };
 const defaultCredsForEmployees = {
-  username: "qwerty",
-  password: "qwerty",
+  username: "qwe",
+  password: "qwe",
 };
 
 function Login() {
@@ -32,6 +32,9 @@ function Login() {
       password == defaultCredsForEmployees.password
     ) {
       router.push("/employee-dashboard");
+    } else {
+      seterrorMessage("Wrong Credentials...");
+      return;
     }
   };
 
