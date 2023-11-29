@@ -1,6 +1,9 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
 /* html,
 body {
 } */
+
+/* #b5b5b5 */
 
 * {
   padding: 0;
@@ -8,8 +11,16 @@ body {
   box-sizing: border-box;
 }
 
+body {
+  background-color: #7a7a7a;
+}
+
 h1 {
-  font-size: 50px;
+  font-size: 40px;
+}
+
+h2 {
+  margin: 0;
 }
 
 button {
@@ -34,4 +45,14 @@ textarea {
   border-radius: 5px;
   font-size: 20px;
   width: 100%;
+}
+
+tr td {
+  vertical-align: middle;
+}
+
+.icon_and_text {
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }

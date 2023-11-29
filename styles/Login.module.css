@@ -1,37 +1,37 @@
-
-
 .login_container {
-	margin-top: 200px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 100px 35px;
-	width: 800px;
-	display: flex;
-	flex-direction: column;
-	gap: 25px;
-	border: 2px solid black;
-	border-radius: 10px;
-  }
-  
-  .login_container > input {
-	width: 250px;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-  }
-  
-  .login_container > h1 {
-	margin-left: auto;
-	margin-right: auto;
-  }
-  
-  .buttons_in_row {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-  }
-  
-  /* .login_button {
+  margin-top: 170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 35px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  /* border: 2px solid black; */
+  border-radius: 10px;
+  background-color: #b5b5b5;
+}
+
+.login_container > input {
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.login_container > h1 {
+  margin-left: auto;
+  margin-right: auto;
+  color: #2b2b2b;
+}
+
+.buttons_in_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* .login_button {
 	background-color: #59b2ee;
 	border-style: none;
 	color: #ffffff;
@@ -43,8 +43,8 @@
 	margin-right: auto;
 	padding: 10px 20px;
   } */
-  
-  /* .login_button:hover {
+
+/* .login_button:hover {
 	background-color: #4cf132;
 	color: #59b2ee;
 	font-weight: bolder;
@@ -70,4 +70,3 @@
 	color: #59b2ee;
 	font-weight: bolder;
   } */
-  

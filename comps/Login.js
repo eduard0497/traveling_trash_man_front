@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import styles from "../styles/Login.module.css";
 import { useRouter } from "next/router";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import { MdLogin } from "react-icons/md";
+
 
 const defaultCredsForAdmins = {
   username: "123",
@@ -47,26 +52,43 @@ function Login() {
   return (
     <div className={styles.login_container}>
       <h1>Waste Bin Level Management</h1>
-      <input
-        type="text"
-        placeholder="Email..."
-        value={username}
-        onChange={(e) => setusername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password..."
-        value={password}
-        onChange={(e) => setpassword(e.target.value)}
-      />
+      <FloatingLabel
+        controlId="floatingInput"
+        label="Username"
+        className="mb-3"
+      >
+        <Form.Control
+          type="email"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setusername(e.target.value)}
+        />
+      </FloatingLabel>
+
+      <FloatingLabel
+        controlId="floatingInput"
+        label="Password"
+        className="mb-3"
+      >
+        <Form.Control
+          type="email"
+          placeholder="name@example.com"
+          value={password}
+          onChange={(e) => setpassword(e.target.value)}
+        />
+      </FloatingLabel>
+
       {errorMessage && <p>{errorMessage}</p>}
       <div className={styles.buttons_in_row}>
-        <button className={styles.clear_button} onClick={clearInputs}>
+        <Button variant="warning" onClick={clearInputs}>
           CLEAR
-        </button>
-        <button className={styles.login_button} onClick={login}>
-          Log In
-        </button>
+        </Button>
+
+        <Button variant="success" onClick={login}>
+          <div className="icon_and_text">
+            <MdLogin size="20px" /> Log In
+          </div>
+        </Button>
       </div>
     </div>
   );

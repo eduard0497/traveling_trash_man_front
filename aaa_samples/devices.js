@@ -11,13 +11,13 @@ export const devices = [
     lat: 34.24162486342446,
     lng: -118.53312379123766,
     battery: 76,
-	  level: 61,
+	  level: 85,
   },
   {
     id: 3,
     lat: 34.23864450968821,
     lng: -118.52814541323107,
     battery: 12,
-	  level: 87,
+	  level: 64,
   },
 ];
